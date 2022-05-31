@@ -3,6 +3,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 // To get the root element from the HTML document
 import asabenehImage from './images/asabeneh.jpg'
+import cssLogo from './images/css_logo.png';
+import htmlLogo from './images/html_logo.png';
+import reactLogo from './images/react_logo.png';
 
 // to import the doSomeMath from the math.js with or without extension
 import doSomeMath from './math.js'
@@ -65,11 +68,20 @@ const personAge = (
 // JSX element, main
 const techs = ['HTML', 'CSS', 'JavaScript']
 const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+const techImgs = [cssLogo,htmlLogo,reactLogo]
+const techImgsRender = techImgs.map((img)=><img src={img} height={100} width={100}/>)
 
 const user = (
   <div>
     <img src={asabenehImage} alt='asabeneh image' />
   </div>
+)
+
+const exercises1 = (
+  <p>
+    <li>Font End Technologies</li>
+    <li>{techImgsRender}</li>
+  </p>
 )
 
 // JSX element, main
@@ -84,6 +96,7 @@ const main = (
         :
       </p>
       <ul>{techsFormatted}</ul>
+      <ul>{exercises1}</ul>
       {result}
       {personAge}
       {user}
